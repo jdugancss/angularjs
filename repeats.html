@@ -1,0 +1,24 @@
+<html ng-app>
+
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="angular.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<style>
+	.even { color : red; }
+	.odd { color : blue; }
+</style>
+
+</head>
+<body style="padding:50px">
+
+     <div ng-init = "albums = [ { name: 'madrid', title: 'Weekend' }, { name: 'iceland', title : 'Holiday' } ]">
+     <!--li ng-repeat="album in albums" ng-class = "{ even: $even, odd:$odd }"-->
+	 <li ng-repeat="album in albums" ng-class-even="'even'" ng-class-odd="'odd'">
+	 
+          {{ $index + 1}} {{ album.name }} ({{album.title | uppercase}})
+     </li>
+	</div>
+
+</body>
+</html>
